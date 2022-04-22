@@ -32,5 +32,5 @@ data = {
 
 for i in range(50):
   name = requests.post("https://srfng.ais.co.th/api/v2/login/sendOneTimePW",data=data, headers=headers)
-  time.sleep(3)
+
   print(name.text)
